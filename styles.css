@@ -1,0 +1,38 @@
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: min-content;
+}
+
+.plate-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #eeeeee;
+    padding: 10px;
+    border-radius: 5px
+}
+
+.plate-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.plate-pair {
+
+}
+
+.plate {
+    width: 70px;
+    padding: 10px;
+    border: 1px solid #777777;
+    border-radius: 5px;
+    background-color: #cccccc;
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
