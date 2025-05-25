@@ -1,24 +1,68 @@
 
 const start = () => {
-    const plates = platesData.map((section) => (
-        section.front.map((frontRow, rowIndex) => (
+    const plates = platesData.map((section) => ({
+        name: section.name,
+        plates: section.front.map((frontRow, rowIndex) => (
             frontRow.map((frontPlate, columnIndex) => ({ front: frontPlate, back: section.back?.[rowIndex]?.[frontRow.length - columnIndex - 1] }))
         ))
-    ));
+    }));
 
     const container = document.createElement("div");
     container.className = "grid-container";
+
+    let currentlySelected = undefined;
+
+    const trigger = (section, row, column) => {
+        if (!currentlySelected) {
+            // if nothing currently selected, select triggered
+            select(section, row, column);
+            currentlySelected = { section, row, column };
+        } else if (currentlySelected.section === section && currentlySelected.row === row && currentlySelected.column === column) {
+            // if trigger on currently selected, then unselect triggered
+            deselect(section, row, column)
+            currentlySelected = undefined;
+        } else {
+            // if trigger on different, unselect selected and select trigger
+            deselect(currentlySelected.section, currentlySelected.row, currentlySelected.column);
+            select(section, row, column);
+            currentlySelected = { section, row, column };
+        }
+    };
+
+    const getPlate = (section, row, column) => {
+        const sections = document.body.querySelectorAll(".plate-grid");
+        const rows = sections[section].querySelectorAll(".plate-row");
+        return rows[row].querySelectorAll(".plate-pair")[column];
+    };
+
+    const select = (section, row, column) => {
+        getPlate(section, row, column).classList.add("selected");
+    };
+
+    const deselect = (section, row, column) => {
+        getPlate(section, row, column).classList.remove("selected");
+    };
     
-    plates.forEach((section) => {
+    plates.forEach((section, sectionIndex) => {
+        const sectionLabelContainter = document.createElement("div");
+        sectionLabelContainter.className = "section-label-container";
+    
+        const sectionLabel = document.createElement("p");
+        sectionLabel.innerHTML = section.name;
+
+        sectionLabelContainter.appendChild(sectionLabel);
+        
         const sectionPlateGrid = document.createElement("div");
         sectionPlateGrid.className = "plate-grid";
 
-        section.forEach((row) => {
+        sectionPlateGrid.appendChild(sectionLabelContainter);
+
+        section.plates.forEach((row, rowIndex) => {
             const rowContainer = document.createElement("div");
 
             rowContainer.className = "plate-row";
             
-            row.forEach((plate) => {
+            row.forEach((plate, columnIndex) => {
                 const plateContainer = document.createElement("div");
                 const frontPlateText = document.createElement("p");
                 const backPlateText = document.createElement("p");
@@ -33,6 +77,10 @@ const start = () => {
                 plateContainer.appendChild(frontPlateText);
                 plateContainer.appendChild(backPlateText);
                 rowContainer.appendChild(plateContainer);
+
+                plateContainer.addEventListener("click", () => {
+                    trigger(sectionIndex, rowIndex, columnIndex);
+                });
             });
 
             sectionPlateGrid.appendChild(rowContainer);
@@ -41,6 +89,23 @@ const start = () => {
         container.appendChild(sectionPlateGrid);
     });
 
+    document.onkeydown = (event) => {
+        event.preventDefault();
+        switch (event.key) {
+            case "ArrowLeft":
+                currentlySelected && trigger(currentlySelected.section, currentlySelected.row, currentlySelected.column - 1);
+                break;
+                case "ArrowRight":
+                currentlySelected && trigger(currentlySelected.section, currentlySelected.row, currentlySelected.column + 1);
+                break;
+                case "ArrowUp":
+                currentlySelected && trigger(currentlySelected.section, currentlySelected.row - 1, currentlySelected.column);
+                break;
+                case "ArrowDown":
+                currentlySelected && trigger(currentlySelected.section, currentlySelected.row + 1, currentlySelected.column);
+                break;
+        }
+    };
 
     document.body.appendChild(container);
 };
@@ -135,7 +200,7 @@ const platesData = [
             ["OBLONGS", "PACIFIC", "QIVIUTS", "RADIATE", "SALIENT", "TAFFETA", "UMBERED"],
             ["OBLIQUE", "PADLOCK", "QUAFFED", "RAVIOLI", "SAPLING", "TAKEOUT", "UMPTEEN"],
             ["OBVIATE", "PAGEBOY", "QUAHOGS", "RAGTIME", "SATYRIC", "TAMBURA", "———————"],
-            ["OCARINE", "PAINTER", "QUAICHS", "READING", "SAVANNA", "———————", "———————"],
+            ["OCARINA", "PAINTER", "QUAICHS", "READING", "SAVANNA", "———————", "———————"],
             ["OCEANIC", "PAISLEY", "QUALIFY", "REFRACT", "———————", "———————", "UNEARTH"],
             ["OCTAVES", "PALMIER", "QUAMASH", "———————", "———————", "TEKTITE", "UNIFIED"],
             ["OCTOPUS", "PANOPLY", "———————", "———————", "SCARLET", "TENDRIL", "UNMOVED"],

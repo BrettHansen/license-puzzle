@@ -5,6 +5,10 @@
     width: min-content;
 }
 
+.section-label-container {
+    margin: 0 auto;
+}
+
 .plate-grid {
     display: flex;
     flex-direction: column;
@@ -21,7 +25,16 @@
 }
 
 .plate-pair {
+    padding: 2px;
+    cursor: pointer;
+}
 
+.plate-pair:hover {
+    background-color: #99aacc;
+}
+
+.plate-pair.selected {
+    background-color: #5566ee;
 }
 
 .plate {
