@@ -47,6 +47,7 @@ const start = () => {
 
 const platesData = [
     { // section 1
+        "name": "A",
         "front": [
             ["ABALONE", "BALANCE", "CACOMBA", "DABBLER", "EARMARK", "FACETED", "GABBART"],
             ["ABILITY", "BALMILY", "CADENZA", "DAISIES", "EARTHEN", "FACTUAL", "GABIONS"],
@@ -69,6 +70,7 @@ const platesData = [
         ]
     },
     { // section 2
+        "name": "B",
         "front": [
             ["HABITAT", "ICEBERG", "JABBERS", "KACHINA", "LABORER", "MACABRE", "NAGGNIG"],
             ["HACKERS", "ICELESS", "JABIRUS", "KALIMBA", "LACONIC", "MACHINE", "NAIVETE"],
@@ -127,6 +129,7 @@ const platesData = [
         ]
     },
     { // section 3
+        "name": "C",
         "front": [
             ["OBELISK", "PACHIST", "QINDARS", "RACQUET", "SAGUARO", "TABLEAU", "UKULELE"],
             ["OBLONGS", "PACIFIC", "QIVIUTS", "RADIATE", "SALIENT", "TAFFETA", "UMBERED"],
@@ -138,10 +141,18 @@ const platesData = [
             ["OCTOPUS", "PANOPLY", "———————", "———————", "SCARLET", "TENDRIL", "UNMOVED"],
         ],
         "back": [
-
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            ["MPASHNT", "KARBEAR", "ERACIZM", "HAD2HAV", "TRUSTF8", "DRMCHSR", "CLMBHI2"],
+            ["MEROME", "RSKIBUS", "BLUHARE", "LETITRD", "CMAREGO", "ITCNBON", "MPECABL"],
         ]
     },
     { // section 4
+        "name": "D",
         "front": [
             ["VACUOUS", "WAFFLES", "———————", "———————", "ZACATON", "AEOLIAN", "BESIEGE"],
             ["VALIANT", "———————", "———————", "YACKING", "ZAGGING", "AEROBIC", "BIDDING"],
@@ -153,10 +164,18 @@ const platesData = [
             ["VERBOSE", "WEAVERS", "XEROTIC", "YARROWS", "ZEALOUS", "ALAMODE", "BLATANT"],
         ],
         "back": [
-
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            ["2DEMALL", "OPN2DIF", "2BNJOYD", "MMMHMMM", "GWIZZ", "BAKPAKR", "BLKMJIC"],
+            ["ESTM8ER", "VRRROOM", "CGRPRYD", "BURNNLV", "ITSADEL", "BRGRGRL", "SUBLIME"],
         ]
     },
     { // section 5
+        "name": "E",
         "front": [
             ["CARAVAN", "DEBACLE", "EDIFICE", "FASHION", "GARBAGE", "HEDGING", "IMPINGE"],
             ["CAROTIN", "DECAGON", "EFFACED", "FAUVIST", "GARBLED", "HEINOUS", "IMPLANT"],
@@ -186,10 +205,36 @@ const platesData = [
             ["CLAMOUR", "DIVINER", "ENTHUSE", "FLUVIAL", "GNOSTIC", "HONORED", "INSTEAD"],
         ],
         "back": [
-
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            ["LV2WHYN", "EXEXEC", "FXITFST", "IPUSH2", "LIFSGR8", "DRGNFLZ", "HAMSRUS"],
+            ["MMAZING", "IMPDQ2", "9ELEVEN", "BRITALY", "2QTP2T", "1N10SE", "NOSPOON"],
+            ["FRSHWTR", "GUIDUCK", "GETSUM", "HUHWHAT", "NVRFRGT", "IBCRUZN", "AUTOBOX"],
+            ["BLKDMND", "HAPPYHR", "W8LIFT", "SOBRGAL", "STRGAZR", "NVMYBUG", "GRNRNRG"],
+            ["CMPLSV", "CREATV", "ZMYDUST", "XTRMSKR", "MSLCAR", "GLFADKT", "BMWPOWR"],
+            ["EBAYQN", "WA2FAST", "PCBWTHU", "PUFNSTF", "VANITY", "SLVRWLF", "ARUKIND"],
+            ["HONDINI", "C2IT", "HIPTRIP", "TXN4EVR", "2L82W8", "GOANYWR", "RDYNABL"],
+            ["CESTWA", "MINT2B", "10SNUT", "CAM2BLV", "RVRSONG", "DMBYALL", "LIBERTE"],
+            ["ULTAMTM", "REALMCY", "O2BNLUV", "ZFOR2", "S8NHOT", "ITEEOFF", "LIVTFLY"],
+            ["JUST4FN", "NMLTLKR", "IMINMY", "DIGJAZZ", "2WISE4U", "FR8TRN", "MTNTOPN"],
+            ["HNTNRIG", "IWNTSUN", "OFVDRZN", "IHRDEWE", "SH8KSPR", "YGOHOME", "SCBAGRL"],
+            ["DOADEAL", "FORTUN8", "WRECKEM", "GTADANZ", "PEACE4U", "———————", "SALMN8R"],
+            ["XLER8", "NUBREED", "CARTOON", "HAUDI2U", "NOCANT", "PEZHEAD", "DSTYRD"],
+            ["MEEDI8R", "———————", "BAKNAXN", "COW54", "AKN2FSH", "ELCTRC", "———————"],
+            ["ASCENTS", "FRGTABT", "JUSTRGT", "ART4ALL", "WIFSMAD", "JOYSDRV", "BLONDGE"],
+            ["BEING", "SHARKB8", "CRPDIEM", "SO1L1ST", "DBLHELX", "IDRPETS", "FOTOGRF"],
+            ["BBBBOBB", "ILRESQU", "ODDYSKI", "JAGA2D", "ARTTCHR", "FFFFFUN", "SNOMISR"],
+            ["NMBS2K", "XSDNID", "SWALLOW", "BFIRST", "LICENSE", "DRCRASH", "TALEEHO"],
+            [],
+            [],
         ]
     },
     { // section 6
+        "name": "F",
         "front": [
             ["JEALOUS", "KINGDOM", "LIONESS", "MERCURY", "NIRVANA", "ODALISK", "PARADOX"],
             ["JEEPERS", "KINGLET", "LINEAGE", "MESSAGE", "NITPICK", "ODDBALL", "PARKING"],
@@ -219,10 +264,36 @@ const platesData = [
             ["JOURNAL", "KWEDINI", "LYRICAL", "MYSTIFY", "NUTCASE", "OXIDIZE", "PYRAMID"],
         ],
         "back": [
-
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            ["PORSCHE", "4LORAX", "CHARGIT", "SRDNPTY", "MATHLVR", "LST1MDE", "MNDCRYM"],
+            ["BZZNBYU", "IM4WNTR", "MYTQUIN", "HIFIBR", "BEDDING", "MYPLTOY", "WTRFRNT"],
+            ["3MSKTRS", "OLDRYZR", "OSTRICH", "THNKFSH", "FARCIDE", "FNEFARM", "LVN4FN"],
+            ["COUPLET", "MYWDSTK", "ABTRFLY", "2NDHOM", "PAWTY", "IXLR8TT", "MYZEN"],
+            ["GD4NTHN", "ESC8POD", "RDRUNNR", "SEQRITY", "DOORMAT", "PRRFECT", "NDABAG"],
+            ["COUGR", "ANBYOND", "CZECHM8", "RD2MATO", "ROAMN", "2SPOILD", "MNYMTRS"],
+            ["CHKNLPS", "VETITBE", "N2BNL8", "PAPASTK", "SPCEMTN", "HI2UFME", "GRR8FUL"],
+            ["TAXMAM", "UBTCHA", "GNFSHNG", "HOTENUF", "ONAWHIM", "DNTBGME", "MADBNKR"],
+            ["OFF2GLF", "EN4CER", "PIGBENZ", "ONOIML8", "DAWGFNZ", "SPLORIN", "PA55ION"],
+            ["PDYTAT", "MBZMBZ", "DLIGHT2", "SCHNELL", "CARYME", "LV2CAMP", "HRMJSTY"],
+            ["FORSHO", "IMWHOIM", "LAV8RZ", "XSTNSHL", "OBSESHN", "HVNBND", "HION4WD"],
+            ["DBLSHOT", "HUMDNGR", "———————", "Y2KFE", "DZRTFN", "BUGDYLN", "HVNSENT"],
+            ["———————", "HMMMMMR", "MPULSE", "LEPURR", "———————", "ETAL8", "KEROUAC"],
+            ["BYTEME", "NMITABL", "BBYBMR", "BRNGMON", "CME2SEL", "EARS4U", "RNNLATE"],
+            ["GITIUP", "———————", "NRGSAVR", "RHAULER", "FEWLY", "3VOM", "CARED4"],
+            ["UNBRDLD", "ILBBAK", "HMATLST", "MY15MIN", "LGWAYHM", "———————", "ACPTNCE"],
+            ["SOGR8FL", "LETRUCK", "PRKPLCE", "———————", "AUTOBAN", "GOODNRG", "DOICARE"],
+            ["LOSTTAG", "HVNFNOW", "VEHICLE", "GLDNEGG", "HRDWORK", "GENERIC", "DIZDREM"],
+            [],
+            [],
         ]
     },
     { // section 7
+        "name": "G",
         "front": [
             ["QUARTER", "REPTILE", "SCRUNCH", "TERRAIN", "UNNERVE", "VERDURE", "WEATHER"],
             ["QUASHED", "RHODIUM", "SEAWEED", "THEOREM", "UPSTOOD", "VIBRATO", "———————"],
@@ -234,10 +305,18 @@ const platesData = [
             ["———————", "———————", "SWIZZLE", "TWIDDLE", "UTOPIAN", "VOYAGER", "WRITHED"],
         ],
         "back": [
-
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            ["SLUGB8", "IFORGET", "LV2SKI2", "OILBANK", "SOLRPWR", "ESCKEY", "SHOP2XS"],
+            ["K9TOY42", "MCMLXX", "INSTYLE", "ZYAL8R", "SUPRB", "SKIDRO", "LEXCESS"],
         ]
     },
     { // section 8
+        "name": "H",
         "front": [
             ["———————", "———————", "———————"],
             ["———————", "———————", "———————"],
@@ -267,7 +346,21 @@ const platesData = [
             ["———————", "———————", "ZYZZYVA"],
         ],
         "back": [
-
+            ["WATRFWL"],
+            ["TBIRDFN"],
+            ["KIDZNME"],
+            ["CAYMNS"],
+            ["PIR8TE"],
+            ["B4NEED"],
+            ["KARMMMA"],
+            ["IDRVSLO"],
+            ["BOOTFUL"],
+            ["———————"],
+            ["XRAYBOB"],
+            ["ZZZOOM"],
+            ["RU4FUN"],
+            ["RAYN4ST"],
+            ["———————"],
         ]
     }
 ];
