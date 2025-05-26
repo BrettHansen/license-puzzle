@@ -14,32 +14,32 @@ const start = () => {
 
     const trigger = (section, row, column) => {
         try {
-        if (row < 0 || row > plates[section].plates.length - 1) {
-            return;
-        }
+            if (row < 0 || row > plates[section].plates.length - 1) {
+                return;
+            }
 
-        if (column < 0) {
-            section = section - 1;
-            column = plates[section].plates[row].length - 1;
-        } else if (column > plates[section].plates[row].length - 1) {
-            section = section + 1;
-            column = 0;
-        }
+            if (column < 0) {
+                section = section - 1;
+                column = plates[section].plates[row].length - 1;
+            } else if (column > plates[section].plates[row].length - 1) {
+                section = section + 1;
+                column = 0;
+            }
 
-        if (!currentlySelected) {
-            // if nothing currently selected, select triggered
-            select(section, row, column);
-            currentlySelected = { section, row, column };
-        } else if (currentlySelected.section === section && currentlySelected.row === row && currentlySelected.column === column) {
-            // if trigger on currently selected, then unselect triggered
-            deselect(section, row, column)
-            currentlySelected = undefined;
-        } else {
-            // if trigger on different, unselect selected and select trigger
-            select(section, row, column);
-            deselect(currentlySelected.section, currentlySelected.row, currentlySelected.column);
-            currentlySelected = { section, row, column };
-        }
+            if (!currentlySelected) {
+                // if nothing currently selected, select triggered
+                select(section, row, column);
+                currentlySelected = { section, row, column };
+            } else if (currentlySelected.section === section && currentlySelected.row === row && currentlySelected.column === column) {
+                // if trigger on currently selected, then unselect triggered
+                deselect(section, row, column)
+                currentlySelected = undefined;
+            } else {
+                // if trigger on different, unselect selected and select trigger
+                select(section, row, column);
+                deselect(currentlySelected.section, currentlySelected.row, currentlySelected.column);
+                currentlySelected = { section, row, column };
+            }
         } catch {}
     };
 
@@ -51,6 +51,7 @@ const start = () => {
 
     const select = (section, row, column) => {
         getPlate(section, row, column).classList.add("selected");
+        getPlate(section, row, column).scrollIntoView({ block: "nearest" });
     };
 
     const deselect = (section, row, column) => {
