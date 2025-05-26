@@ -13,6 +13,19 @@ const start = () => {
     let currentlySelected = undefined;
 
     const trigger = (section, row, column) => {
+        try {
+        if (row < 0 || row > plates[section].plates.length - 1) {
+            return;
+        }
+
+        if (column < 0) {
+            section = section - 1;
+            column = plates[section].plates[row].length - 1;
+        } else if (column > plates[section].plates[row].length - 1) {
+            section = section + 1;
+            column = 0;
+        }
+
         if (!currentlySelected) {
             // if nothing currently selected, select triggered
             select(section, row, column);
@@ -23,10 +36,11 @@ const start = () => {
             currentlySelected = undefined;
         } else {
             // if trigger on different, unselect selected and select trigger
-            deselect(currentlySelected.section, currentlySelected.row, currentlySelected.column);
             select(section, row, column);
+            deselect(currentlySelected.section, currentlySelected.row, currentlySelected.column);
             currentlySelected = { section, row, column };
         }
+        } catch {}
     };
 
     const getPlate = (section, row, column) => {
@@ -90,18 +104,21 @@ const start = () => {
     });
 
     document.onkeydown = (event) => {
-        event.preventDefault();
         switch (event.key) {
             case "ArrowLeft":
+                event.preventDefault();
                 currentlySelected && trigger(currentlySelected.section, currentlySelected.row, currentlySelected.column - 1);
                 break;
-                case "ArrowRight":
+            case "ArrowRight":
+                event.preventDefault();
                 currentlySelected && trigger(currentlySelected.section, currentlySelected.row, currentlySelected.column + 1);
                 break;
-                case "ArrowUp":
+            case "ArrowUp":
+                event.preventDefault();
                 currentlySelected && trigger(currentlySelected.section, currentlySelected.row - 1, currentlySelected.column);
                 break;
-                case "ArrowDown":
+            case "ArrowDown":
+                event.preventDefault();
                 currentlySelected && trigger(currentlySelected.section, currentlySelected.row + 1, currentlySelected.column);
                 break;
         }
